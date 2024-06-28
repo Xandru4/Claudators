@@ -29,7 +29,9 @@ Only tested on linux.
 - [ ] Make a few forms with Zenity
 - [ ] Separate the alpha into different one-purpose modular scripts
 - [ ] The references functionality should offer the option to either extract the URLSs or to completely erase all the references (wich default?).
-- [ ] Make the _model_ texts into separate files for each language
+- [ ] Put the _model_ texts into separate files for each language
+ - [ ] Español
+ - [ ] Français
 - [ ] Poner `WP:` antes de cada articulo traducido asi como el idioma y el `raw`
 - [ ] add: `Thumb` > `Miniatura`, `File` > `Archivo` y sustituir comillas anglosajonas por comillas latinas
 - [ ] make other translation options (local?) such as google translate ^[[1](https://ostechnix.com/use-google-translate-commandline-linux/)]
