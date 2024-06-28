@@ -14,14 +14,14 @@ Only tested on linux.
 
 **Rough but working**: `wiki-alpha.py`
 **Smooth but in develloppement**: 
-- [ ] `wiki-gui.sh`
-	➜ `wiki-fetch.py`
-	➜ `wiki-refs.py`
-	➜ `wiki-trans.py`
-	➜ `wiki-add.py`
-		- `wiki-language1.txt`
-		- `wiki-language2.txt`
- 		- `wiki-languageN.txt`
+`wiki-gui.sh` ➜
+	- `wiki-fetch.py`
+	- `wiki-refs.py`
+	- `wiki-trans.py`
+	- `wiki-add.py` ➜
+			- `wiki-language1.txt`
+			- `wiki-language2.txt`
+ 			- `wiki-languageN.txt`
 
 ### Tasks
 
