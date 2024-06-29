@@ -1,4 +1,4 @@
-#!/bin/bash
+#!~/.virtualenvs/wiki/bin/activate
 
 # Toggle the things the utility should accomplish
 check_choices=$(zenity --list \
