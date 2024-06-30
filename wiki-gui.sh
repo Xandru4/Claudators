@@ -1,15 +1,21 @@
-#!~/.virtualenvs/wiki/bin/activate
-
+#!~/.virtualenvs/wiki/bin/python
 # Toggle the things the utility should accomplish
 check_choices=$(zenity --list \
       --checklist \
+      --title="Wikipedia offline edit tool" \
+      --column "Select" \
       --column "Action" \
-      --column "Choice" \
       --column "Host" \
-      TRUE Fetch_Article Wikipedia \
-      TRUE Translate Deepl \
-      TRUE Clean_URLs Script \
-      TRUE Model_Text File)
+      TRUE "Fetch_Article" "Wikipedia" \
+      TRUE "Translate" "Deepl" \
+      TRUE "Clean_URLs" "Script" \
+      TRUE "Model_Text" "File")
+
+# Check if the user canceled
+if [ $? -eq 1 ]; then
+    echo "User canceled the selection."
+    exit 1
+fi
 
 zenity --forms \
        --text "Wikipedia article" \
