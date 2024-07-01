@@ -1,4 +1,5 @@
-#!~/.virtualenvs/wiki/bin/python
+#!/bin/bash
+source /home/alejandro/.virtualenvs/wiki/bin/activate
 # Toggle the things the utility should accomplish
 check_choices=$(zenity --list \
       --checklist \
