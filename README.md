@@ -39,8 +39,8 @@ The tool has only tested on linux, but should work with WSL.
 - [ ] make other translation options (local?) such as google translate ^[[1](https://ostechnix.com/use-google-translate-commandline-linux/)]
 - [ ] Making an desktop icon for the bash script (and for the python environement too I guess...)
 - [ ] Maybe I should make the normal workflow the default and also a button for a more advanced interface with all the options
-- [ ]  Explore the wikipedia API to do other things (like automatically post to the sandbox or get internal link suggestions) ^[[web](https://api.wikimedia.org/wiki/Searching_for_Wikipedia_articles_using_Python)] ^[[web](https://www.mediawiki.org/wiki/API:Main_page)] ^[[so](https://stackoverflow.com/questions/627594/is-there-a-wikipedia-api/627606#627606)]
-- [ ] Create specific error messages for issues
+- [ ]  Explore the wikipedia API to do other things (like automatically post to the sandbox or get internal link suggestions) ([web](https://api.wikimedia.org/wiki/Searching_for_Wikipedia_articles_using_Python) [web](https://www.mediawiki.org/wiki/API:Main_page) [so](https://stackoverflow.com/questions/627594/is-there-a-wikipedia-api/627606#627606))
+- [ ] Create specific error messages for specific issues (like no internet connection)
 - [ ] Deploy options to split y remerge automatically articles wich are too big for Deepl
 - [ ] Alternatively, the tool could work for local files so long articles can be handled manually?
 - [ ] Making a bash installer for the whole tool
