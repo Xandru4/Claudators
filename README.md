@@ -6,7 +6,7 @@ Are you good with  Wikipedia markup and tired of being limited to be online in o
 
 This tool (only the alpha works) will help you with all that with a few simple and customisable scripts that will give you way more control and save time when editing or translating a wikipedia article.
 
-The scripts will assist you in fetching and doing simple operations to the source text, in order to give you all the power. What you do with that text depends on you. Once fetched and treated, you may open on one side the draft and in another the original and make your modifications with your text editor of choice[1]. Following the relevant Wikipedia regulations is paramount, just as with the official tool.
+The scripts will assist you in fetching and doing simple operations to the source text, in order to give you all the power. What you do with that text depends on you. Once fetched and treated, you may open on one side the draft and in another the original and make your modifications with your text editor of choice [1]. Following the relevant Wikipedia regulations is paramount, just as with the official tool.
 
 This is not a tool to automatically make translations or modifications but a starting point to quickly get a woking draft. Automatic translations are prohibited on most wikipedias and the draft tghe tool outputs isn't perfect by any means, wich means a speaker of the translated language should translate everything using the draft as a mere starting point. After the article has been translated and checked, all the sources in the original will have to be added through the wikipedia interface according to the pertinent rules. Source translation is not in the scope of this project.
 
