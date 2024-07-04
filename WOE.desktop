@@ -1,0 +1,21 @@
+[Desktop Entry]
+Name[ca]=Wikipedia offline edit
+Name[de]=Wikipedia offline edit
+Name[en]=Wikipedia offline edit
+Name[eu]=Wikipediak Traduccionen
+Name[ar]=لسان الغيب
+Name[fr]=Wikipedia offline edit
+Name[ja]=メイン・メニュー
+Name[pt]=Wikipedia Traduçaos
+Name[ro]=Wikipedia offline edit
+Name[es]=Wikipedia offline edit
+Name[ru]=Главное меню
+Comment[ca]=
+Comment[en]=
+Comment[es]=
+Exec=/home/alejandro/Dropbox/Azahara/Trirremes/Scripts/Wikipedia-offline-edit/wiki-gui.sh
+Terminal=true
+Type=Application
+Categories=Utility
+Icon=/home/alejandro/Dropbox/Azahara/Trirremes/Scripts/Wikipedia-offline-edit/woe.png
+Version=1.00
