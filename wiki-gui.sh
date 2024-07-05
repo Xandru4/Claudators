@@ -24,6 +24,7 @@ zenity --forms \
        --add-entry "Article language" \
 
 # Activate the fetch script
+./wiki-fetch.py "$" "$" "$"
 
 # Otherwise message
 if [[ "$check_choices" == *"Fetch_Article"* ]]; then
