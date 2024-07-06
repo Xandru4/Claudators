@@ -24,10 +24,14 @@ zenity --forms \
        --add-entry "Article language" \
 
 # Use IFS to split the input into separate variables
-IFS="|" read -r title language <<< "$input"
+#IFS="|" read -r title language <<< "$input"
+
+# Use awk to define the imput variables
+title=$(awk -F '|' '{print $1}' <<< "$output")
+language=$(awk -F '|' '{print $2}' <<< "$output")
 
 # Activate the fetch script
-./wiki-fetch.py "$language" "$title"
+./wiki-fetch.py "$title" "$language"
 
 # Otherwise message
 if [[ "$check_choices" == *"Fetch_Article"* ]]; then
