@@ -1,4 +1,4 @@
-# Script to fetch the wikipedia source code and save it as a file
+# Script to fetch the wikipedia source code and save it as file
 def fetch_wikitext(language, title):
     api_url = f"https://{language}.wikipedia.org/w/api.php"
     params = {
