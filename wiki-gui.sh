@@ -4,6 +4,8 @@ source /home/alejandro/.virtualenvs/wiki/bin/activate
 check_choices=$(zenity --list \
       --checklist \
       --title="Wikipedia offline edit tool" \
+      --width=500 \
+      --height=500 \
       --column "Select" \
       --column "Action" \
       --column "Host" \
@@ -43,7 +45,7 @@ if [ "$check_choices" == "Translate" ]; then
     target_language=$(zenity --entry --title="Target Language for Translation" --text="To what language do you want to translate? (2/3 letter code):")
 fi
 # Run the translation script with the set values
-python3 wiki-trans.py "$language" "$article_title" "$model_choice" "$translate_choice" "$target_language"
+./wiki-trans.py "$language" "$article_title" "$model_choice" "$translate_choice" "$target_language"
 # Check if the script ran successfully
 if [ $? -eq 0 ]; then
     zenity --info --text="Done"

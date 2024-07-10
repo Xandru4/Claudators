@@ -9,7 +9,6 @@ def fetch_wikitext(language, title):
         "rvprop": "content",
         "rvslots": "main"
     }
-
     try:
         response = requests.get(api_url, params=params)
         response.raise_for_status()
