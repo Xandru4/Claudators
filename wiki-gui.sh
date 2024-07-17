@@ -1,5 +1,11 @@
 #!/bin/bash
 source /home/alejandro/.virtualenvs/wiki/bin/activate
+
+import requests
+import os
+import re
+from datetime import datetime
+
 # Toggle the things the utility should accomplish
 check_choices=$(zenity --list \
       --checklist \
