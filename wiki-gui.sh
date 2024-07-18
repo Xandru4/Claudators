@@ -53,5 +53,7 @@ else
     zenity --error --text="Failed to fetch or save the Wikipedia article."
 fi
 # Execute reference elimination
+python /home/alejandro/Dropbox/Azahara/Trirremes/Scripts/Wikipedia-offline-edit/wiki-refs.py "$title" "$directory" "$txt"
+
 
 # Execute model text addition
