@@ -1,5 +1,5 @@
 #!/bin/bash
-#source /home/alejandro/.virtualenvs/wiki/bin/activate
+source /home/alejandro/.virtualenvs/wiki/bin/activate
 directory="/home/alejandro/Dropbox/Azahara/Peltastas/Apeiron"
 txt="md"
 
@@ -35,7 +35,7 @@ if [ $? -eq 1 ]; then
 fi
 
 # Use read to split the input into separate variables
-IFS='|' read -r title language directory txt <<< "$output"
+IFS='|' read -r title language <<< "$output"
 
 # Activate the fetch script
 python /home/alejandro/Dropbox/Azahara/Trirremes/Scripts/Wikipedia-offline-edit/wiki-fetch.py "$language" "$title" "$directory" "$txt"

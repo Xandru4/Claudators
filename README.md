@@ -16,20 +16,23 @@ The tool has only tested on linux, but should work with WSL.
 
 **Rough but working**: `wiki-alpha.py`
 **Smooth but in develloppement**: 
-`wiki-gui.sh` ➜
-	- `wiki-fetch.py`
-	- `wiki-refs.py`
-	- `wiki-trans.py`
-	- `wiki-add.py` ➜
-			- `wiki-language1.txt`
-			- `wiki-language2.txt`
- 			- `wiki-languageN.txt`
+
+`wiki-gui.sh`
+⬇
+- `wiki-fetch.py`
+- `wiki-refs.py`
+- `wiki-trans.py`
+- `wiki-add.py`
+⬇
+- `wiki-language1.txt`
+- `wiki-language2.txt`
+ 	- `wiki-languageN.txt`
 
 ### Tasks
 
 - [X] Push the project on github
-- [ ] Make a few forms with Zenity
-- [ ] Separate the alpha into different one-purpose modular scripts
+- [x] Make a few forms with Zenity
+- [x] Separate the alpha into different one-purpose modular scripts
 - [ ] The references functionality should offer the option to either extract the URLSs or to completely erase all the references (wich default?).
 - [ ] Put the _model_ texts into separate files for each language
 	- [ ] Español

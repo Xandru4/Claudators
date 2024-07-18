@@ -40,6 +40,6 @@ if len(sys.argv) != 5:
 
 wikitext = fetch_source(title, language, directory, txt)
 if wikitext:
-    with open(f"/home/alejandro/Dropbox/Azahara/Peltastas/Apeiron{directory}/{title}-raw.md", "w", encoding="utf-8") as file:
+    with open(f"{directory}/{title}-raw.md", "w", encoding="utf-8") as file:
         file.write(wikitext)
-    print(f"Saved {title}-raw.md")
+    print(f"Saved {directory}/{title}-raw.md")
