@@ -1,16 +1,30 @@
-# Script to nuke the references from a given file
+import re
+import sys
 
-# Define refs to clean
-def clean_urls(text): ref_pattern = r'<ref>(.*?)</ref>'
-
-# Define variavbles
+# Define variables
 title = sys.argv[1]
-directory = sys.argv[2]
-txt = sys.argv[3]
+language = sys.argv[2]
+directory = sys.argv[3]
+txt = sys.argv[4]
 
-# Do the thing
-wikitext = fetch_source(title, directory, txt)
+# Define the function to clean references
+def clean(text):
+    ref_pattern = r'<ref.*?>.*?</ref>|<ref.*?/>'
+    cleaned_text = re.sub(ref_pattern, '', text, flags=re.DOTALL)
+    return cleaned_text
+
+# Read file
+def read_source(title, directory, language, txt):
+    try:
+        with open(f"{directory}/WP:{title}-{language}.{txt}", "r", encoding="utf-8") as file:
+            return file.read()
+    except FileNotFoundError:
+        print(f"File {directory}/WP:{title}-{language}.{txt} not found.")
+        return None
+
+# Define elimination
+wikitext = read_source(title, directory, language, txt)
 if wikitext:
-    with open(f"{directory}/{title}-raw.md", "w", encoding="utf-8") as file:
-        file.write(wikitext)
-    print(f"The old references are no more")
+    cleaned_text = clean(wikitext)
+    with open(f"{directory}/WP:{title}-{language}.{txt}", "w", encoding="utf-8") as file:
+        file.write(cleaned_text)

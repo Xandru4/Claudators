@@ -33,11 +33,13 @@ The tool has only tested on linux, but should work with WSL.
 - [X] Push the project on github
 - [x] Make a few forms with Zenity
 - [x] Separate the alpha into different one-purpose modular scripts
-- [ ] The references functionality should offer the option to either extract the URLSs or to completely erase all the references (wich default?).
+- [ ] The references functionality should offer the option to either
+	- [ ] extract the URLSs 
+	- [x] or to completely erase all the references .(wich default?)
 - [ ] Put the _model_ texts into separate files for each language
 	- [ ] Español
 	- [ ] Français
-- [ ] Poner `WP:` antes de cada articulo traducido asi como el idioma y el `raw`
+- [x] Poner `WP:` antes de cada articulo traducido asi como el idioma y el `raw`
 - [ ] add: `Thumb` > `Miniatura`, `File` > `Archivo` y sustituir comillas anglosajonas por comillas latinas
 - [ ] make other translation options (local?) such as google translate ([CLI google translate](https://ostechnix.com/use-google-translate-commandline-linux/))
 - [ ] Making an desktop icon for the bash script (and for the python environement too I guess...)

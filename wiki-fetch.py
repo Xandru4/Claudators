@@ -19,7 +19,6 @@ def fetch_source(title, language, directory, txt):
         "rvprop": "content",
         "rvslots": "main"
     }
-    
     try:
         response = requests.get(api_url, params=params)
         response.raise_for_status()  # HTTP Error message
@@ -40,6 +39,8 @@ if len(sys.argv) != 5:
 
 wikitext = fetch_source(title, language, directory, txt)
 if wikitext:
-    with open(f"{directory}/{title}-raw.md", "w", encoding="utf-8") as file:
+    with open(f"{directory}/WP:{title}-raw.md", "w", encoding="utf-8") as file:
         file.write(wikitext)
-    print(f"Saved {directory}/{title}-raw.md")
+    with open(f"{directory}/WP:{title}-{language}.md", "w", encoding="utf-8") as file:
+        file.write(wikitext)
+    print(f"Saved {directory}/WP:{title}-raw.md and non-translated {directory}/WP:{title}-{language}.md")
