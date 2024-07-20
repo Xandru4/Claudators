@@ -47,7 +47,21 @@ if [ "$check_choices" == "Translate" ]; then
     target_language=$(zenity --entry --title="Target Language for Translation" --text="To what language do you want to translate? (2/3 letter code):")
 fi
 # Run the translation script with the set values
+### Check if the user entered something
+if [ -z "$target_language" ]; then
+    echo "No target language code entered. Exiting."
+    exit 1
+fi
+### Run the Python script with the input values
 python wiki-trans.py "$language" "$title" "$model" "$target_language" "$directory" "$txt"
+
+# Check if the Python script ran successfully
+if [ $? -eq 0 ]; then
+    echo "Successfully fetched, translated, and saved the Wikipedia article."
+else
+    echo "Failed to fetch, translate, or save the Wikipedia article."
+fi
+
 # Check if the script ran successfully
 if [ $? -eq 0 ]; then
     zenity --info --text="Done"

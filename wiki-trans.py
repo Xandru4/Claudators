@@ -1,19 +1,4 @@
 # From alpha
-def clean_urls(text):
-    # Define refs to clean
-    ref_pattern = r'<ref>(.*?)</ref>'
-    # Define the URLs to keep
-    url_pattern = r'https?://(?:www\.)?\S+\.\S+'
-    # Use re.sub to replace URLs
-    def replace_ref(match):
-        ref_content = match.group(1)
-        urls = re.findall(url_pattern, ref_content)
-        if urls:
-            comment = '\n\n'.join(urls)
-            return f"\n\n{comment}\n\n"
-        else:
-            return ''
-    return re.sub(ref_pattern, replace_ref, text)
 
 def translate_text(text, target_language):
     api_url = "https://api-free.deepl.com/v2/translate"
