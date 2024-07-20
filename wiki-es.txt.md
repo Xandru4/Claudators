@@ -1,19 +1,24 @@
+== Referencias ==
+
+* {{Traducido ref|{language}|original|oldid=|trad=parcial|fecha={current_date}}}
+* {{Traducido de|{language}|original|oldid=|trad=parcial|fecha={current_date}}}
+https://{language}.wikipedia.org/wiki/{title.replace(' ', '_')}
+
+{{listaref|2}}
+{{Control de autoridades}}
+
+== Enlaces externos ==
+*
 
 == Véase también ==
-{{Portal|LGBT}}
-* [[Hombres que tienen sexo con hombres]]
+{{Portal|}}
+*
 {{lista de columnas|2|
-* [[Safismo]]
-* [[Homoerotismo]]
-* [[Bisexualidad]]
-* [[Borrado bisexual]]
-* [[Homosexualidad]]
-* [[Movimiento homófilo]]
+*
 }}
 
 == Referencias ==
 {{listaref|2}}
 
 == Enlaces externos ==
-{{Traducido ref|pt|Aquileano|oldid=67738227|trad=parcial|fecha=5 Junio 2024}}
 ```

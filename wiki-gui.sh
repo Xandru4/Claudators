@@ -1,6 +1,8 @@
 #!/bin/bash
 source /home/alejandro/.virtualenvs/wiki/bin/activate
+
 directory="/home/alejandro/Dropbox/Azahara/Trirremes/Borradores/wiki"
+instalation_path="/home/alejandro/Dropbox/Azahara/Trirremes/Scripts/Wikipedia-offline-edit/"
 txt="md"
 
 # Toggle the things the utility should accomplish
@@ -57,3 +59,4 @@ python /home/alejandro/Dropbox/Azahara/Trirremes/Scripts/Wikipedia-offline-edit/
 
 
 # Execute model text addition
+python /home/alejandro/Dropbox/Azahara/Trirremes/Scripts/Wikipedia-offline-edit/wiki-refs.py
