@@ -75,4 +75,4 @@ if [ $? -eq 0 ]; then
     echo "Successfully fetched, translated, and saved the Wikipedia article."
 else
     echo "Failed to fetch, translate, or save the Wikipedia article."
-fi
+f`

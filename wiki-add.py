@@ -9,11 +9,11 @@ if len(sys.argv) != 4:
     sys.exit(1)
 
 translation = sys.argv[1]
-language = sys.argv[2]
+target_language = sys.argv[2]
 installation_path = sys.argv[3]
 
-text_1 = os.path.join(installation_path, f"wiki-1-{language}.md")
-text_2 = os.path.join(installation_path, f"wiki-2-{language}.md")
+text_1 = os.path.join(installation_path, f"wiki-1-{target_language}.md")
+text_2 = os.path.join(installation_path, f"wiki-2-{target_language}.md")
 
 # Read first file for the beginning
 def add_1(translation, text_1):

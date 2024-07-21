@@ -1,8 +1,8 @@
-# Claudators: wikipedia offline edit tool
+# « Claudators » : wikipedia offline edit tool
 
 Are you good with Wikipedia markup and wish you could write at your on pace without being online?
 Do you want to translate articles on your text editor of your choice without all the limitations on the offcial translation tool?
-This tool, composed of a few simple and customisable scripts will give you way more control and save you time when editing.
+This tool, composed of a few simple and customisable scripts, will give you way more control and save you time when editing.
 
 ### Description
 
@@ -10,15 +10,17 @@ The scripts will assist you in fetching and doing simple operations to the sourc
 
 ### Legality
 
-Following the relevant Wikipedia regulations is paramount, just as it is with the official tool.This is **not** a tool to automatically make translations or modifications, but a starting point to quickly get a woking draft. Automatic translations are prohibited on most wikipedias and the draft tghe tool outputs isn't perfect by any means, wich means a speaker of the translated language should translate everything using the draft as a mere starting point. After the article has been translated and checked, all the sources in the original will have to be added through the wikipedia interface according to the pertinent rules. Source translation is not in the scope of this project.
+Following the relevant Wikipedia regulations is paramount, just as it is with the official tool. This is **not** a tool to automatically make translations or modifications, but a starting point to quickly get a woking draft. Automatic translations are prohibited on most wikipedias and the tool's output isn't perfect by any means. The editor should know the language of the articles and use the draft as a mere starting point. After the article has been translated and checked, all the sources in the original have to be added through the wikipedia interface. Translating wikicode is not part of the scope of this project.
 
 ### Scripts
 
 The tool has only tested on linux, but should work with WSL.
 
-**Rough but working**: `wiki-alpha.py`
-**Smooth but in develloppement**: 
+In the main shell script, different informations can be manually customised for every usecase.
 
+The tool empowers to edit online but internet is obviously needed to fetch and to translate, wich is done wither through the [Translate Shell](https://www.soimort.org/translate-shell/) project, wich permits translation with several translation service or directly through the Deepl API, wich offers the best result but is limited to a freemium offer.
+
+**Smooth but in develloppement**: 
 `wiki-gui.sh`
 ⬇
 - `wiki-fetch.py`
@@ -30,6 +32,7 @@ The tool has only tested on linux, but should work with WSL.
 - `wiki-language2.txt`
  	- `wiki-languageN.txt`
 
+**Rough but working**: `wiki-alpha.py`
 ### Tasks
 
 - [X] Push the project on github
@@ -44,12 +47,12 @@ The tool has only tested on linux, but should work with WSL.
 - [x] Poner `WP:` antes de cada articulo traducido asi como el idioma y el `raw`
 - [ ] add: `Thumb` > `Miniatura`, `File` > `Archivo` y sustituir comillas anglosajonas por comillas latinas
 - [ ] make other translation options (local?) such as google translate ([CLI google translate](https://ostechnix.com/use-google-translate-commandline-linux/))
-- [ ] Making an desktop icon for the bash script (and for the python environement too I guess...)
+- [x] Making an desktop icon for the bash script (and for the python environement too I guess...)
 - [ ] Maybe I should make the normal workflow the default and also a button for a more advanced interface with all the options
 - [ ]  Explore the wikipedia API to do other things (like automatically post to the sandbox or get internal link suggestions) [^2]
 - [ ] Create specific error messages for specific issues (like no internet connection)
 - [ ] Deploy options to split y remerge automatically articles wich are too big for Deepl
-- [ ] Alternatively, the tool could work for local files so long articles can be handled manually?
+	- [x] Alternatively, the tool could work for local files so long articles can be handled manually?
 - [ ] Making a bash installer for the whole tool
 
 [^1]:Obsidian or the gnome text editor is what I use, but you may simply use notepad or vim for a minimalist approach.
