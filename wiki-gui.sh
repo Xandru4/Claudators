@@ -1,14 +1,15 @@
 #!/bin/bash
-source /home/alejandro/.virtualenvs/wiki/bin/activate
 
+# Customisable part
+source /home/alejandro/.virtualenvs/wiki/bin/activate
 directory="/home/alejandro/Dropbox/Azahara/Trirremes/Borradores/wiki"
-instalation_path="/home/alejandro/Dropbox/Azahara/Trirremes/Scripts/Wikipedia-offline-edit/"
+installation_path="/home/alejandro/Dropbox/Azahara/Trirremes/Scripts/Claudators"
 txt="md"
 
 # Toggle the things the utility should accomplish
 check_choices=$(zenity --list \
       --checklist \
-      --title="Wikipedia offline edit tool" \
+      --title="Wikipedia offline translation tool" \
       --width=500 \
       --height=500 \
       --column "Select" \
@@ -17,43 +18,57 @@ check_choices=$(zenity --list \
       TRUE "Fetch_Article" "Wikipedia" \
       FALSE "Translate" "Deepl" \
       TRUE "Clean_URLs" "Script" \
-      FALSE "Model_Text" "File")
+      TRUE "Model_Text" "File")
 # Check if the user canceled
 if [ $? -eq 1 ]; then 
     echo "User canceled the selection."
     exit 1
 fi
-
 # Second form for the title and language
 output=$(zenity --forms \
        --text "Wikipedia article" \
-       --add-entry "Wikipedia article title" \
-       --add-entry "Article language")
-
+       --add-entry "Article title" \
+       --add-entry "Original language" \
+       --add-entry "Target language")
 # Check if the user canceled
 if [ $? -eq 1 ]; then
     echo "User canceled the input."
     exit 1
 fi
 
-# Use read to split the input into separate variables
-IFS='|' read -r title language <<< "$output"
+# Split the input into separate variables
+IFS='|' read -r title original_language target_language <<< "$output"
 
-# Activate the fetch script
-python /home/alejandro/Dropbox/Azahara/Trirremes/Scripts/Wikipedia-offline-edit/wiki-fetch.py "$language" "$title" "$directory" "$txt"
+# Construct titles
+title="${title// /_}"
+source="$directory/WP:$title-raw.$txt"
+translation="$directory/WP:$title-$target_language.$txt"
 
-# Prompt for the target language to translate
-if [ "$check_choices" == "Translate" ]; then
-    target_language=$(zenity --entry --title="Target Language for Translation" --text="To what language do you want to translate? (2/3 letter code):")
+# Execute fetching
+if [[ "$check_choices" == *"Fetch_Article"* ]]; then
+    python $installation_path/wiki-fetch.py "$original_language" "$title" "$source" "$translation"
 fi
-# Run the translation script with the set values
+
+# Execute reference elimination
+if [[ "$check_choices" == *"Clean-URLs"* ]]; then
+    python $installation_path/wiki-refs.py "$translation"
+fi
+
+# Execute translation
 ### Check if the user entered something
 if [ -z "$target_language" ]; then
     echo "No target language code entered. Exiting."
     exit 1
 fi
-### Run the Python script with the input values
-python wiki-trans.py "$language" "$title" "$model" "$target_language" "$directory" "$txt"
+### Run the script
+if [[ "$check_choices" == *"Translate"* ]]; then
+    python $instalation_path/wiki-trans.py "$original_language" "$title" "$target_language" "$source" "$translation"
+fi
+
+# Execute model text addition script
+if [[ "$check_choices" == *"Model_Text"* ]]; then
+    python $installation_pat/wiki-add.py "$language" "$translation" "$directory" "$installation_path"
+fi
 
 # Check if the Python script ran successfully
 if [ $? -eq 0 ]; then
@@ -61,16 +76,3 @@ if [ $? -eq 0 ]; then
 else
     echo "Failed to fetch, translate, or save the Wikipedia article."
 fi
-
-# Check if the script ran successfully
-if [ $? -eq 0 ]; then
-    zenity --info --text="Done"
-else
-    zenity --error --text="Failed to do the recquired taks."
-fi
-# Execute reference elimination
-python /home/alejandro/Dropbox/Azahara/Trirremes/Scripts/Wikipedia-offline-edit/wiki-refs.py "$title" "$language" "$directory" "$txt"
-
-
-# Execute model text addition
-python /home/alejandro/Dropbox/Azahara/Trirremes/Scripts/Wikipedia-offline-edit/wiki-refs.py

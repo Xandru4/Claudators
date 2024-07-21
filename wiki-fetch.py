@@ -1,16 +1,18 @@
-import requests
 import sys
-import os
+import requests
+def fetch_source(original_language, title):
+    if wikitext:
+    # Save the fetched content to the source file
+        with open(source, "w", encoding="utf-8") as file:
+            file.write(wikitext)
 
-# Script to fetch the Wikipedia source code and save it as a file
-
-language = sys.argv[1]
+original_language = sys.argv[1]
 title = sys.argv[2]
-directory = sys.argv[3]
-txt = sys.argv[4]
+source = sys.argv[3]
+translation = sys.argv[4]
 
-def fetch_source(title, language, directory, txt):
-    api_url = f"https://{language}.wikipedia.org/w/api.php"
+def fetch_source(original_language, title):
+    api_url = f"https://{original_language}.wikipedia.org/w/api.php"
     params = {
         "action": "query",
         "format": "json",
@@ -34,13 +36,15 @@ def fetch_source(title, language, directory, txt):
         sys.exit(1)
 
 if len(sys.argv) != 5:
-    print("Usage: python script.py <language> <title> <directory> <txt>")
+    print("Usage: python script.py <original_language> <title> <source_file> <translation_file>")
     sys.exit(1)
-
-wikitext = fetch_source(title, language, directory, txt)
+# Fetch the source content
+wikitext = fetch_source(original_language, title)
 if wikitext:
-    with open(f"{directory}/WP:{title}-raw.md", "w", encoding="utf-8") as file:
+    # Save the fetched content to the source file
+    with open(source, "w", encoding="utf-8") as file:
         file.write(wikitext)
-    with open(f"{directory}/WP:{title}-{language}.md", "w", encoding="utf-8") as file:
-        file.write(wikitext)
-    print(f"Saved {directory}/WP:{title}-raw.md and non-translated {directory}/WP:{title}-{language}.md")
+    # Save the same content to the translation file
+    with open(translation, "w", encoding="utf-8") as file:
+        file.write(wikitext)  # Correct method is file.write()
+    print(f"Saved content to {source} and {translation}")

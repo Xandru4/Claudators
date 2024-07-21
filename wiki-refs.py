@@ -2,10 +2,8 @@ import re
 import sys
 
 # Define variables
-title = sys.argv[1]
-language = sys.argv[2]
-directory = sys.argv[3]
-txt = sys.argv[4]
+#title = sys.argv[1]
+translation = sys.argv[1]
 
 # Define the function to clean references
 def clean(text):
@@ -14,17 +12,17 @@ def clean(text):
     return cleaned_text
 
 # Read file
-def read_source(title, directory, language, txt):
+def read_source(translation):
     try:
-        with open(f"{directory}/WP:{title}-{language}.{txt}", "r", encoding="utf-8") as file:
+        with open(f"{translation}", "r", encoding="utf-8") as file:
             return file.read()
     except FileNotFoundError:
-        print(f"File {directory}/WP:{title}-{language}.{txt} not found.")
+        print(f"File {translation} not found.")
         return None
 
 # Define elimination
-wikitext = read_source(title, directory, language, txt)
+wikitext = read_source(translation)
 if wikitext:
     cleaned_text = clean(wikitext)
-    with open(f"{directory}/WP:{title}-{language}.{txt}", "w", encoding="utf-8") as file:
+    with open(f"{translation}", "w", encoding="utf-8") as file:
         file.write(cleaned_text)

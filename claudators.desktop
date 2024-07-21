@@ -1,5 +1,8 @@
 [Desktop Entry]
 Name[en]=Claudators
+Name[es]=Claudators
+Comment[en]=Claudators, corchetes, square brackets or wikipedia offline edit tool (WOE)
+Comment[es]=Claudators, crochetes o wikipedia offline edit tool (WOE) para editar o traducir articulos offline
 Name[ca]=Úiquipediá deslineat edició
 Name[ga]=Woe
 Name[de]=Wikipedia offlinar editun
@@ -8,13 +11,10 @@ Name[ar]=لسان الغيب
 Name[fr]=Wikipedia offline edit
 Name[ja]=メイン・メニュー
 Name[pt]=Wikipedia Traduçaos
-Name[es]=Wikipedia offline edit
 Name[ru]=Главное меню
-Comment[en]=Claudators or wikipedia offline edit tool (WOE)
-Comment[es]=
-Exec=/home/alejandro/Dropbox/Azahara/Trirremes/Scripts/Wikipedia-offline-edit/wiki-gui.sh
+Exec=/home/alejandro/Dropbox/Azahara/Trirremes/Scripts/Claudators/wiki-gui.sh
 Terminal=false
 Type=Application
 Categories=Utility
-Icon=/home/alejandro/Dropbox/Azahara/Trirremes/Scripts/Wikipedia-offline-edit/woe.png
+Icon=/home/alejandro/Dropbox/Azahara/Trirremes/Scripts/Claudators/claudators.png
 Version=1.00

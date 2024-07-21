@@ -1,4 +1,4 @@
-# [[Claudators]]: wikipedia offline edit tool
+# Claudators: wikipedia offline edit tool
 
 Are you good with Wikipedia markup and wish you could write at your on pace without being online?
 Do you want to translate articles on your text editor of your choice without all the limitations on the offcial translation tool?
