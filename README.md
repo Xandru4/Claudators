@@ -27,9 +27,10 @@ The tool empowers to edit online but internet is obviously needed to fetch and t
 - `wiki-refs.py`
 - `wiki-trans.py`
 - `wiki-add.py`
-	- `wiki-language1.txt`
-	- `wiki-language2.txt`
- 	- `wiki-languageN.txt`
+	- `wiki-es-1.txt`
+ 	- `wiki-es-1.txt`
+	- `wiki-fr-1.txt`
+ 	- `wiki-language-N.txt`
 
 **Rough but working**: `wiki-alpha.py`
 ### Tasks
@@ -43,12 +44,13 @@ The tool empowers to edit online but internet is obviously needed to fetch and t
 - [ ] Put the _model_ texts into separate files for each language
 	- [x] Español
 	- [ ] Français
-- [x] Poner `WP:` antes de cada articulo traducido asi como el idioma y el `raw`
-- [ ] add: `Thumb` > `Miniatura`, `File` > `Archivo` y sustituir comillas anglosajonas por comillas latinas
-- [ ] make other translation options (local?) such as google translate ([CLI google translate](https://ostechnix.com/use-google-translate-commandline-linux/))
-- [x] Making an desktop icon for the bash script (and for the python environement too I guess...)
+- [x] Add `WP:` before every translation and `raw` fefore original articles fetched
+- [ ] Make python script to substitute templates (like: `Thumb` > `Miniatura`, `File` > `Archivo`) and quotation marks.
+- [ ] Add other translation options  such as google translate ([CLI google translate](https://ostechnix.com/use-google-translate-commandline-linux/))
+	- [ ] Add a local translation tool	
+- [x] Making an desktop icon for the app (bash script and for the python environement too I guess...)
 - [ ] Maybe I should make the normal workflow the default and also a button for a more advanced interface with all the options
-- [ ]  Explore the wikipedia API to do other things (like automatically post to the sandbox or get internal link suggestions) [^2]
+- [ ] Explore the wikipedia API to do other things (like automatically post to the sandbox or get internal link suggestions) [^2]
 - [ ] Create specific error messages for specific issues (like no internet connection)
 - [ ] Deploy options to split y remerge automatically articles wich are too big for Deepl
 	- [x] Alternatively, the tool could work for local files so long articles can be handled manually?
