@@ -27,9 +27,8 @@ The tool empowers to edit online but internet is obviously needed to fetch and t
 - `wiki-refs.py`
 - `wiki-trans.py`
 - `wiki-add.py`
-⬇
-- `wiki-language1.txt`
-- `wiki-language2.txt`
+	- `wiki-language1.txt`
+	- `wiki-language2.txt`
  	- `wiki-languageN.txt`
 
 **Rough but working**: `wiki-alpha.py`
