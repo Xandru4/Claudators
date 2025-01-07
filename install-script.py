@@ -10,4 +10,5 @@ install os rquests datetime
 dnf install translate-shell
 
 # pon los scripts en su sitio
-
+Articles:/home/alejandro/Dropbox/Azahara/
+Intallation place:/home/alejandro/Dropbox/Azahara/Triarii/Scripts/
