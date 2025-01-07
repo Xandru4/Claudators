@@ -1,5 +1,6 @@
-![](https://raw.githubusercontent.com/Xandru4/Claudators/refs/heads/main/claudators.png)
 # « Claudators » : wikipedia offline edit tool
+![|80](https://raw.githubusercontent.com/Xandru4/Claudators/refs/heads/main/claudators.png)
+
 
 Are you good with Wikipedia markup and wish you could write at your on pace without being online?
 Do you want to translate articles on your text editor of your choice without all the limitations on the offcial translation tool?
