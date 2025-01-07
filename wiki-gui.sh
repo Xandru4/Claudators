@@ -2,8 +2,8 @@
 
 # Customisable part
 source /home/alejandro/.virtualenvs/wiki/bin/activate
-directory="/home/alejandro/Dropbox/Azahara/Trirremes/Borradores/wiki"
-installation_path="/home/alejandro/Dropbox/Azahara/Trirremes/Scripts/Claudators"
+directory="/home/alejandro/Dropbox/Azahara/Hastatii/Apeiron"
+installation_path="/home/alejandro/Dropbox/Azahara/Triarii/Scripts/Claudators"
 txt="md"
 
 # Toggle the things the utility should accomplish
