@@ -23,7 +23,8 @@ In the main shell script, different informations can be manually customised for 
 The tool empowers to edit online but internet is obviously needed to fetch and to translate, wich is done wither through the [Translate Shell](https://www.soimort.org/translate-shell/) project, wich permits translation with several translation service or directly through the Deepl API, wich offers the best result but is limited to a freemium offer.
 
 **Smooth but in develloppement**: 
-- `wiki-gui.sh`
+- `installer.sh`
+- `GUI.sh`
 	- `wiki-fetch.py`
 	- `wiki-refs.py`
 	- `wiki-trans.py`
@@ -33,7 +34,7 @@ The tool empowers to edit online but internet is obviously needed to fetch and t
 		- `wiki-fr-1.txt`
  		- `wiki-language-N.txt`
 
-**Rough but working**: `wiki-alpha.py`
+**Rough but working**: `alpha.py`
 ### Tasks
 
 - [X] Push the project on github
