@@ -10,10 +10,11 @@ fi
 
 cp -r . "$install_dir" 
 
-touch $install_dir/.dirs.txt
-echo "install_dir='$install_dir'" >> dirs.txt 
-echo "raw_dir='$raw_dir'" >> dirs.txt
-echo "translated_dir='$translated_dir'" >> dirs.txt
+config_file="~/.config/claudators/config"
+mkdir -p "$(dirname "$config_file")";
+echo "install_dir='$install_dir'" > "$config_file"
+echo "raw_dir='$raw_dir'" >> "$config_file"
+echo "translated_dir='$translated_dir'" >> "$config_file"
 
 # Make the python environnement
 python3 -m venv .venv
