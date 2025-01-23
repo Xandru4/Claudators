@@ -1,4 +1,5 @@
 #!/bin/bash
+source .venv/bin/activate
 
 # Customisable part
 source /home/alejandro/.virtualenvs/wiki/bin/activate
