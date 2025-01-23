@@ -14,6 +14,18 @@ The scripts will assist you in fetching and doing simple operations to the sourc
 
 Following the relevant Wikipedia regulations is paramount, just as it is with the official tool. This is **not** a tool to automatically make translations or modifications, but a starting point to quickly get a woking draft. Automatic translations are prohibited on most wikipedias and the tool's output isn't perfect by any means. The editor should know the language of the articles and use the draft as a mere starting point. After the article has been translated and checked, all the sources in the original have to be added through the wikipedia interface. Translating wikicode is not part of the scope of this project.
 
+### Use
+
+The tool has been tested on Fedora Linux 41 (Workstation Edition).
+
+Clone this repository. Install the Dependencies:
+```
+sudo dnf install translate-shell python3 zenity
+```
+
+Then run the `installer.sh` to select the folder you wish to use.
+
+
 ### Scripts
 
 The tool has only tested on linux, but should work with WSL.
