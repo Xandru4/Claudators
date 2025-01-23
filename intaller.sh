@@ -6,7 +6,10 @@ pip install os rquests datetime
 
 # Install associated services
 dnf install translate-shell
-#==ask the user to make a DEEPL account==
+
+# Get the deepl API key
+zenity --question --text="To access the recommended Deepl translation service, you will have to create an account on [their website](https://www.deepl.com/en/login)" --ok-label="I am ready to provide my API key" --cancel-label="I don't wish to use Deepl"
+zenity --entry --text="Enter your API key:"
 
 # Set directories
 #==usar Zenity para determinar esto una primera vez==
