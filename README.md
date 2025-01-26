@@ -25,6 +25,12 @@ sudo dnf install translate-shell python3 zenity
 
 Then run the `installer.sh` to select the folder you wish to use.
 
+```
+cd ~/Downloads
+chmod +x installer.sh
+sudo .installer.sh
+```
+
 
 ### Scripts
 

@@ -1,6 +1,6 @@
 #!/bin/bash
 # Set directories
-install_dir=$(zenity --file-selection --title="Where do you want to install Claudators?" --directory)
+install_dir=$(zenity --file-selection --title="Where do you want to install Claudators?" --text="choosing /opt is recommended" --directory)
 raw_dir=$(zenity --file-selection --title="Where should the original articles files be stored?" --directory)
 translated_dir=$(zenity --file-selection --title="Where should drafts and translations be stored?" --directory)
 
