@@ -68,9 +68,9 @@ The tool empowers to edit online but internet is obviously needed to fetch and t
 - [ ] Deploy options to split y remerge automatically articles wich are too big for Deepl
 	- [x] Alternatively, the tool could work for local files so long articles can be handled manually?
 - [x] Learn to make a desktop icon for the app (bash script and for the python environement too I guess...)
-	- [ ] Making a bash installer for the whole tool
-	- [ ] Ask for user imput during setup
-	- [ ] Give it a good name and logo
+	- [x] Making a bash installer for the whole tool
+	- [x] Ask for user imput during setup
+	- [x] Give it a good name and logo
 - [ ] Make the whole app into an obsidian plugin? [YT](https://www.youtube.com/watch?v=kQCc7HYOfpY) or [YT](https://www.youtube.com/watch?v=AgXa03ZxJ88)
 
 [^1]:Obsidian or the gnome text editor is what I use, but you may simply use notepad or vim for a minimalist approach.

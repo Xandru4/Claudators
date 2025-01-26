@@ -18,8 +18,11 @@ check_choices=$(zenity --list \
       --column "Host" \
       TRUE "Fetch_Article" "Wikipedia" \
       FALSE "Translate" "Deepl" \
-      TRUE "Clean_URLs" "Script" \
-      TRUE "Model_Text" "File")
+      FALSE "Translate" "Google" \
+      FALSE "Translate" "Microsoft" \
+      FALSE "Translate" "Apertium" \
+      TRUE "Clean_URLs" "script" \
+      TRUE "Model_Text" "file")
 # Check if the user canceled
 if [ $? -eq 1 ]; then 
     echo "User canceled the selection."
