@@ -49,4 +49,3 @@ if translated_text:
 else:
     print("Translation failed. Exiting.")
     sys.exit(1)
-
