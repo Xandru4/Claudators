@@ -17,9 +17,9 @@ zenity --info --title="Articles folder" --text="Where should the original articl
 raw_dir=$(zenity --file-selection --title="Claudators" --directory)
 
 zenity --info --title="Translations folder" --text="Where should drafts and finished translations be stored?" --ok-label="Pick folder"
-translated_dir=$(zenity --file-selection --title="Claudators" --directory)
+trans_dir=$(zenity --file-selection --title="Claudators" --directory)
 
-if [ -z "$install_dir" ] || [ -z "$raw_dir" ] || [ -z "$translated_dir" ]; then
+if [ -z "$install_dir" ] || [ -z "$raw_dir" ] || [ -z "$trans_dir" ]; then
   zenity --warning --text="Installation canceled"
   exit 1
 fi 
@@ -31,7 +31,7 @@ config_file="~/.config/claudators"
 mkdir -p "$(dirname "$config_file")";
 echo "install_dir='$install_dir'" > "$config_file"
 echo "raw_dir='$raw_dir'" >> "$config_file"
-echo "translated_dir='$translated_dir'" >> "$config_file"
+echo "translated_dir='$trans_dir'" >> "$config_file"
 
 # Install python modules
 pip install requests datetime venvs | zenity --progress --percentage=0 --auto-close

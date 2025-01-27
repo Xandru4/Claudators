@@ -1,8 +1,7 @@
 import re
 import sys
 
-# Define variables
-#title = sys.argv[1]
+# Define variable
 translation = sys.argv[1]
 
 # Define the function to clean references

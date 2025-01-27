@@ -1,14 +1,15 @@
 import sys
 import requests
-def fetch_source(original_lan, title):
 
+# Set the imported terms
 original_lan = sys.argv[1]
 title = sys.argv[2]
 source = sys.argv[3]
 translation = sys.argv[4]
 
+# Define fetching
 def fetch_source(original_language, title):
-    api_url = f"https://{original_language}.wikipedia.org/w/api.php"
+    api_url = f"https://{original_lan}.wikipedia.org/w/api.php"
     params = {
         "action": "query",
         "format": "json",
@@ -34,8 +35,9 @@ def fetch_source(original_language, title):
 if len(sys.argv) != 5:
     print("Usage: python script.py <original_lan> <title>")
     sys.exit(1)
+
 # Fetch the source content
-wikitext = fetch_source(original_language, title)
+wikitext = fetch_source(original_lan, title)
 if wikitext:
     # Save the fetched content to the source file
     with open(source, "w", encoding="utf-8") as file:
