@@ -1,12 +1,8 @@
 import sys
 import requests
-def fetch_source(original_language, title):
-    if wikitext:
-    # Save the fetched content to the source file
-        with open(source, "w", encoding="utf-8") as file:
-            file.write(wikitext)
+def fetch_source(original_lan, title):
 
-original_language = sys.argv[1]
+original_lan = sys.argv[1]
 title = sys.argv[2]
 source = sys.argv[3]
 translation = sys.argv[4]
@@ -36,7 +32,7 @@ def fetch_source(original_language, title):
         sys.exit(1)
 
 if len(sys.argv) != 5:
-    print("Usage: python script.py <original_language> <title> <source_file> <translation_file>")
+    print("Usage: python script.py <original_lan> <title>")
     sys.exit(1)
 # Fetch the source content
 wikitext = fetch_source(original_language, title)
