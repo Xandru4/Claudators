@@ -39,10 +39,8 @@ if len(sys.argv) != 5:
 # Fetch the source content
 wikitext = fetch_source(original_lan, title)
 if wikitext:
-    # Save the fetched content to the source file
     with open(source, "w", encoding="utf-8") as file:
         file.write(wikitext)
-    # Save the same content to the translation file
     with open(translation, "w", encoding="utf-8") as file:
-        file.write(wikitext)  # Correct method is file.write()
+        file.write(wikitext)
     print(f"Saved content to {source} and {translation}")

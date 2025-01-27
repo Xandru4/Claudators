@@ -62,7 +62,7 @@ if [[ "$check_choices" == *"Translate"* ]]; then
     if [ -z "$target_lan" ]; then
         echo "No target language code entered. Exiting."
         exit 1
-    else python $install_dir/wiki-trans.py "$title" "$original_lan" "$target_lan" "$original" "$translation"
+    else python $install_dir/wiki-trans.py "$title" "$original_lan" "$target_lan" "$original" "$translation" "$file_ext"
 fi
 
 # Execute model text addition script

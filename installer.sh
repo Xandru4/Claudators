@@ -43,8 +43,8 @@ python3 -m venv .venv
 #==add messages incase the key doesn't have the required format==
 if [ $? -eq 0 ]; then
     xdg-open https://www.deepl.com/en/login
-  Deepl-KEY=$(zenity --entry --title="Deepl API key" --text="You will need a Deepl API key to use the service. Make an account on their website")
-    echo "Deepl-KEY='$Deepl-KEY'" >> "$config_file"
+  Deepl_KEY=$(zenity --entry --title="Deepl API key" --text="You will need a Deepl API key to use the service. Make an account on their website")
+    echo "Deepl_KEY='$Deepl_KEY'" >> "$config_file"
 else
   zenity --warning --text="Deepl won't be available"
 fi

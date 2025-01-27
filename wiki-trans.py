@@ -1,10 +1,8 @@
+import sys
+import requests
+source ~/.config/claudators #For thre API key
+
 # Define arguments
-
-source ~/.config/claudators
-
-if len(sys.argv) != 4:
-    print("Usage: wiki-add.py <title> <original_lan> <target_lan> <source> <translation>")
-    sys.exit(1)
 
 title = sys.argv[1]
 original_lan = sys.argv[2]
@@ -12,21 +10,21 @@ target_lan = sys.argv[3]
 original = sys.argv[4]
 translation = sys.argv[5]
 
-# Define translation
+
+if len(sys.argv) != 6:
+    print("Usage: wiki-trans.py <title> <original_lan> <target_lan> <original> <translation>")
+    sys.exit(1)
+
+# Define translation function
 
 def translate_text(original, target_lan):
     api_url = "https://api-free.deepl.com/v2/translate"
-    api_key = os.getenv('DEEPL_API_KEY')  # Use an environment variable for the API key
-    if not api_key:
-        print("DEEPL API key not found. Set the DEEPL_API_KEY environment variable.")   
-        return None
-
+    if not :
     params = {
-        "auth_key": api_key,
-        "text": text,
+        "auth_key": Deepl_KEY,
+        "text": original,
         "target_lang": target_lan
     }
-
     try:
         response = requests.post(api_url, data=params)
         response.raise_for_status()
@@ -35,12 +33,20 @@ def translate_text(original, target_lan):
     except requests.RequestException as e:
         print(f"Error translating text: {e}")
         return None
-translated_text = translate_text(wikitext, target_language)
 
 # Translate
+
+translated_text = translate_text(original, target_lan)
        
 if translated_text:
-    save_text_to_file(output_directory, article_title, translated_text, target_language, f'translated_{target_language}', model_start if model_choice == 'yes' else '', model_end if model_choice == 'yes' else '')
+    try:
+        with open(translation, "w", encoding="utf-8") as f:
+            f.write(translated_text)
+        print(f"Successfully translated to {target_lan} and saved to {translation}")
+    except OSError as e:
+        print(f"Error saving translation to file: {e}")
+        sys.exit(1)
 else:
     print("Translation failed. Exiting.")
-    exit(1)
+    sys.exit(1)
+
