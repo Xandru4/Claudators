@@ -62,7 +62,7 @@ if [[ "$check_choices" == *"Translate"* ]]; then
     if [ -z "$target_lan" ]; then
         echo "No target language code entered. Exiting."
         exit 1
-    else python $install_dir/wiki-trans.py "$original_lan" "$title" "$target_lan" "$original" "$translation"
+    else python $install_dir/wiki-trans.py "$title" "$original_lan" "$target_lan" "$original" "$translation"
 fi
 
 # Execute model text addition script
@@ -71,6 +71,7 @@ if [[ "$check_choices" == *"Model_Text"* ]]; then
 fi
 
 # Check if the Python script ran successfully
+exit_code=$?
 if [ $? -eq 0 ]; then
     echo "Successfully fetched, translated, and saved the Wikipedia article."
 else
