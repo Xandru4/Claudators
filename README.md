@@ -6,29 +6,36 @@ Are you good with Wikipedia markup and wish you could write at your on pace with
 Do you want to translate articles on your text editor of your choice without all the limitations on the offcial translation tool?
 This tool, composed of a few simple and customisable scripts, will give you way more control and save you time when editing.
 
-### Description
+## Description
 
 The scripts will assist you in fetching and doing simple operations to the source text, in order to give you all the power. What you do with that text depends on you. Once fetched and treated, you may open on one side the draft and in another the original and make your modifications with your text editor of choice [^1]. 
 
-### Legality
+## Legality
 
 Following the relevant Wikipedia regulations is paramount, just as it is with the official tool. This is **not** a tool to automatically make translations or modifications, but a starting point to quickly get a woking draft. Automatic translations are prohibited on most wikipedias and the tool's output isn't perfect by any means. The editor should know the language of the articles and use the draft as a mere starting point. After the article has been translated and checked, all the sources in the original have to be added through the wikipedia interface. Translating wikicode is not part of the scope of this project.
 
-### Use
-
+## Use
 The tool has been tested on Fedora Linux 41 (Workstation Edition).
+### Install
 
 Clone this repository. Install the Dependencies:
-```
+```bash
 sudo dnf install translate-shell python3 zenity
 ```
+Then run the `installer.sh` to select the folder you wish to use:
 
-Then run the `installer.sh` to select the folder you wish to use.
-
-```
+```bash
 cd ~/Downloads
 chmod +x installer.sh
 sudo .installer.sh
+```
+### Translate
+Launch the application through the desktop icon or by exexuting the `GUI.sh` file.
+
+### Remove
+Assuming you installed the application in the default, all you have to do to remove it is delete the directory:
+```bash
+rm -r /opt/Claudators
 ```
 
 
