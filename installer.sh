@@ -2,16 +2,23 @@
  zenity --info --text="Welcome to the Claudators installation for Linux!"
 
 # Set directories
-zenity --question --title="Installation" --text="Where do you want to install Claudators?" --cancel-label="/opt (recommended)" --ok-label="Some other place"
-if [ $? -eq 1 ]; then
-  install_dir="/opt"
-else
-  install_dir=$(zenity --file-selection --title="Claudators" --directory)
-  if [ $? -ne 0 ]; then
-    echo "Installation canceled."
-    exit 1
-  fi
-fi
+
+#zenity --question --title="Installation" --text="Where do you want to install Claudators?" --ok-label="Some other place" --cancel-label="/opt (recommended)"
+#if [ $? -eq 1 ]; then
+#  mkdir /opt/Claudators
+#  install_dir="/opt/Claudators"
+#else
+#  install_dir=$(zenity --file-selection --title="Claudators" --directory)
+#  if [ $? -ne 0 ]; then
+#    echo "Installation canceled."
+#    exit 1
+#  fi
+#fi
+
+mkdir /opt/Claudators
+install_dir="/opt/Claudators"
+cp claudators.desktop ~/.local/share/applications
+cp -r . "$install_dir"
 
 zenity --info --title="Articles folder" --text="Where should the original articles files be stored?" --ok-label="Pick folder"
 raw_dir=$(zenity --file-selection --title="Claudators" --directory)
@@ -24,8 +31,6 @@ if [ -z "$install_dir" ] || [ -z "$raw_dir" ] || [ -z "$trans_dir" ]; then
   exit 1
 fi 
 
-cp claudators.desktop ~/.local/share/applications
-cp -r . "$install_dir"
 
 config_file="~/.config/claudators"
 mkdir -p "$(dirname "$config_file")";

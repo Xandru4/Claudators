@@ -25,9 +25,11 @@ sudo dnf install translate-shell python3 zenity
 Then run the `installer.sh` to select the folder you wish to use:
 
 ```bash
-cd ~/Downloads
+cd ~/Downloads/
+unzip Claudators-main.zip
+cd Claudators-main
 chmod +x installer.sh
-sudo .installer.sh
+sudo ./installer.sh
 ```
 ### Translate
 Launch the application through the desktop icon or by exexuting the `GUI.sh` file.

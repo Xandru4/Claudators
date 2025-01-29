@@ -10,7 +10,6 @@ target_lan = sys.argv[3]
 original = sys.argv[4]
 translation = sys.argv[5]
 
-
 if len(sys.argv) != 6:
     print("Usage: wiki-trans.py <title> <original_lan> <target_lan> <original> <translation>")
     sys.exit(1)
