@@ -29,7 +29,7 @@ cd ~/Downloads/
 unzip Claudators-main.zip
 cd Claudators-main
 chmod +x installer.sh
-sudo ./installer.sh
+./installer.sh
 ```
 ### Translate
 Launch the application through the desktop icon or by exexuting the `GUI.sh` file.
