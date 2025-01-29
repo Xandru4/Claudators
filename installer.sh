@@ -1,12 +1,18 @@
 #!/bin/bash
  zenity --info --text="Welcome to the Claudators installation for Linux!"
 
-# Python virtual environnement
-python3 -m venv $HOME/.venvs/Claudators
-source "$HOME/.venvs/Claudators/bin/activate"
+# Move the app to the installation directory
 
-# Install python modules
-pip install requests datetime venvs | zenity --progress --auto-close
+install_dir="'$HOME'/.claudators"
+mkdir "'$HOME'/.claudators"
+cp claudators.desktop ~/.local/share/applications
+cp -r . "$install_dir"
+
+# Crete a pyhon virtual environement and install modules
+pip install venvs
+python3 -m venv $install_dir/venv
+source "$HOME/.claudators/venv/bin/activate"
+pip install requests datetime venvs| zenity --progress --auto-close
 
 # Set directories
 
@@ -22,10 +28,7 @@ pip install requests datetime venvs | zenity --progress --auto-close
 #  fi
 #fi
 
-mkdir /opt/Claudators
-install_dir="/opt/Claudators"
-cp claudators.desktop ~/.local/share/applications
-cp -r . "$install_dir"
+# Ask the user for imput about directories and store it into a config file
 
 zenity --info --title="Articles folder" --text="Where should the original articles files be stored?" --ok-label="Pick folder"
 raw_dir=$(zenity --file-selection --title="Claudators" --directory)
@@ -38,8 +41,7 @@ if [ -z "$install_dir" ] || [ -z "$raw_dir" ] || [ -z "$trans_dir" ]; then
   exit 1
 fi 
 
-mkdir -p "$(dirname "$config_file")";
-config_file="$HOME/.config/claudators"
+config_file="$install_dir/.config"
 echo "install_dir='$install_dir'" > "$config_file"
 echo "raw_dir='$raw_dir'" >> "$config_file"
 echo "translated_dir='$trans_dir'" >> "$config_file"

@@ -1,6 +1,5 @@
 #!/bin/bash
-source $HOME/.venvs/bin/activate
-source ~/.config/claudators
+source $HOME/.claudator/venv/bin/activate
 
 # Toggle the things the utility should accomplish
 check_choices=$(zenity --list \
