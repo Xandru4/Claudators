@@ -35,9 +35,15 @@ chmod +x installer.sh
 Launch the application through the desktop icon or by exexuting the `GUI.sh` file.
 
 ### Remove
-Assuming you installed the application in the default, all you have to do to remove it is delete the directory:
+Assuming you installed the application in the default, all you have to do to remove it is delete the directory along with config files and the icon:
 ```bash
-rm -r /opt/Claudators
+sudo rm -r /opt/Claudators
+rm "$HOME/.local/share/applications/claudators.desktop"
+rm "$HOME/.config/claudators"
+rm -r "$HOME/Zaguan/Claudators-main"
+rm -r "$HOME/.venvs/Claudators
+rm "$HOME/Zaguan/Claudators-main.zip"
+rm "$HOME/.config/claudators"
 ```
 
 
