@@ -4,15 +4,15 @@
 # Move the app to the installation directory
 
 install_dir="'$HOME'/.claudators"
-mkdir "'$HOME'/.claudators"
-cp claudators.desktop ~/.local/share/applications
-cp -r . "$install_dir"
+mkdir "'$HOME'/.claudators" | zenity --progress --auto-close --percentage=1
+cp claudators.desktop ~/.local/share/applications | zenity --progress --auto-close --percentage=10
+cp -r . "$install_dir"  | zenity --progress --auto-close --percentage=20
 
 # Crete a pyhon virtual environement and install modules
-pip install venvs
-python3 -m venv $install_dir/venv
-source "$HOME/.claudators/venv/bin/activate"
-pip install requests datetime venvs| zenity --progress --auto-close
+pip install venvs | zenity --progress --auto-close --percentage=40
+python3 -m venv $install_dir/venv | zenity --progress --auto-close --percentage=50
+source "$HOME/.claudators/venv/bin/activate" | zenity --progress --auto-close --percentage=65
+pip install requests datetime venvs | zenity --progress --auto-close --percentage=75
 
 # Set directories
 
