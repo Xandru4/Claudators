@@ -38,9 +38,8 @@ if [ -z "$install_dir" ] || [ -z "$raw_dir" ] || [ -z "$trans_dir" ]; then
   exit 1
 fi 
 
-touch "$HOME/.config/claudators"
-config_file="$HOME/.config/claudators"
 mkdir -p "$(dirname "$config_file")";
+config_file="$HOME/.config/claudators"
 echo "install_dir='$install_dir'" > "$config_file"
 echo "raw_dir='$raw_dir'" >> "$config_file"
 echo "translated_dir='$trans_dir'" >> "$config_file"
