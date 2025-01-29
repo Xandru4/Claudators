@@ -7,7 +7,7 @@ check_choices=$(zenity --list \
       --checklist \
       --title="Wikipedia offline translation tool" \
       --width=500 \
-      --height=500 \
+      --height=600 \
       --column "Select" \
       --column "Action" \
       --column "Host" \

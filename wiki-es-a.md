@@ -1,3 +1,5 @@
+[[$translation]]
+
 == Referencias ==
 * {{Traducido ref|{language}|{title}|oldid=|trad=total|fecha={date}}}
 * {{Traducido de|{language}|{title}|oldid=|trad=total|fecha={date}}}
