@@ -1,6 +1,6 @@
+import os
 import sys
 import requests
-source ~/.config/claudators #For thre API key
 
 # Define arguments
 
@@ -18,12 +18,15 @@ if len(sys.argv) != 6:
 
 def translate_text(original, target_lan):
     api_url = "https://api-free.deepl.com/v2/translate"
-    if not :
+    deepl_key = os.getenv("Deepl_KEY")
+    if not deepl_key:
+        raise ValueError("DeepL API key not found in environment variables")
     params = {
-        "auth_key": Deepl_KEY,
+        "auth_key": deepl_key,
         "text": original,
         "target_lang": target_lan
     }
+
     try:
         response = requests.post(api_url, data=params)
         response.raise_for_status()

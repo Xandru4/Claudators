@@ -1,6 +1,13 @@
 #!/bin/bash
  zenity --info --text="Welcome to the Claudators installation for Linux!"
 
+# Python virtual environnement
+python3 -m venv $HOME/.venvs/Claudators
+source "$HOME/.venvs/Claudators/bin/activate"
+
+# Install python modules
+pip install requests datetime venvs | zenity --progress --auto-close
+
 # Set directories
 
 #zenity --question --title="Installation" --text="Where do you want to install Claudators?" --ok-label="Some other place" --cancel-label="/opt (recommended)"
@@ -31,18 +38,13 @@ if [ -z "$install_dir" ] || [ -z "$raw_dir" ] || [ -z "$trans_dir" ]; then
   exit 1
 fi 
 
-
-config_file="~/.config/claudators"
+touch "$HOME/.config/claudators"
+config_file="$HOME/.config/claudators"
 mkdir -p "$(dirname "$config_file")";
 echo "install_dir='$install_dir'" > "$config_file"
 echo "raw_dir='$raw_dir'" >> "$config_file"
 echo "translated_dir='$trans_dir'" >> "$config_file"
 
-# Install python modules
-pip install requests datetime venvs | zenity --progress --percentage=0 --auto-close
-
-# Make the python environnement
-python3 -m venv .venv
 
 # Get the deepl API key
 #==add messages incase the key doesn't have the required format==

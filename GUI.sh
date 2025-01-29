@@ -1,5 +1,5 @@
 #!/bin/bash
-source .venv/bin/activate
+source $HOME/.venvs/bin/activate
 source ~/.config/claudators
 
 # Toggle the things the utility should accomplish
