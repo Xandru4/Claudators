@@ -3,8 +3,8 @@
 
 # Move the app to the installation directory
 
-install_dir="'$HOME'/.claudators"
-mkdir "'$HOME'/.claudators" | zenity --progress --auto-close --percentage=1
+install_dir="$HOME/.claudators"
+mkdir "$HOME/.claudators" | zenity --progress --auto-close --percentage=1
 cp claudators.desktop ~/.local/share/applications | zenity --progress --auto-close --percentage=10
 cp -r . "$install_dir"  | zenity --progress --auto-close --percentage=20
 
