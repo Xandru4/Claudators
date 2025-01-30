@@ -8,6 +8,37 @@ mkdir "$HOME/.claudators" | zenity --progress --auto-close --percentage=1
 cp claudators.desktop ~/.local/share/applications | zenity --progress --auto-close --percentage=10
 cp -r . "$install_dir"  | zenity --progress --auto-close --percentage=20
 
+# Create the desktop file
+#Needs to be in here in orde to write the correct filepaths to the user home folder
+# Define the path to the .desktop file
+DESKTOP_FILE="$HOME/.local/share/applications"
+APP_EXEC="$HOME/.claudators/GUI.sh"
+ICON_PATH="$HOME/.claudators/claudators.png"
+
+cat > "$DESKTOP_FILE" <<EOF
+[Desktop Entry]
+Name[en]=Claudators
+Name[es]=Claudators
+Comment[en]=Claudators, corchetes, square brackets or wikipedia offline edit tool (WOE)
+Comment[es]=Claudators, crochetes o wikipedia offline edit tool (WOE) para editar o traducir articulos offline
+Name[ca]=Úiquipediá deslineat edició
+Name[ga]=Woe
+Name[de]=Wikipedia offlinar editun
+Name[eu]=Wikipediak Traduccionen
+Name[ar]=لسان الغيب
+Name[fr]=Wikipedia offline edit
+Name[ja]=メイン・メニュー
+Name[pt]=Wikipedia Traduçaos
+Name[ru]=Главное меню
+Exec=$APP_EXEC
+Icon=$ICON_PATH
+Terminal=false
+Type=Application
+Categories=Utility;Application;
+Version=1.3
+EOF
+chmod +x "$DESKTOP_FILE"
+
 # Crete a pyhon virtual environement and install modules
 pip install venvs | zenity --progress --auto-close --percentage=40
 python3 -m venv $install_dir/venv | zenity --progress --auto-close --percentage=50

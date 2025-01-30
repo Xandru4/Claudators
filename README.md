@@ -37,10 +37,9 @@ Launch the application through the desktop icon or by exexuting the `GUI.sh` fil
 ### Remove
 Assuming you installed the application in the default, all you have to do to remove it is delete the directory along with the icon:
 ```bash
-sudo rm -r "$HOME/.claudators"
+rm -r "$HOME/.claudators"
 rm "$HOME/.local/share/applications/claudators.desktop"
 ```
-
 
 ### Scripts
 

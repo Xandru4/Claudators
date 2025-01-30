@@ -19,7 +19,7 @@ check_choices=$(zenity --list \
       TRUE "Model_Text" "file")
 # Check if the user canceled
 if [ $? -eq 1 ]; then 
-    echo "User canceled the selection."
+    zenity --warning --text="Operation selection canceled"
     exit 1
 fi
 
@@ -32,7 +32,7 @@ output=$(zenity --forms \
        --add-entry "File extension" --entry-text="md")
 # Check if the user canceled
 if [ $? -eq 1 ]; then
-    echo "User canceled the input."
+    zenity --warning --text="Operations canceled"
     exit 1
 fi
 
