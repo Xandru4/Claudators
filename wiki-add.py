@@ -1,45 +1,29 @@
 import sys
 import os
 from datetime import datetime
+date = datetime.now().strftime("%d/%m/%Y")
 
-date = datetime.now().strftime("%Y-%m-%d")
-
-if len(sys.argv) != 4:
-    print("Usage: wiki-add.py <translation> <language> <installation_path>")
+if len(sys.argv) != 3:
+    print("Usage: wiki-add.py <translation> <language>")
     sys.exit(1)
 
-translation = sys.argv[1]
+translation_file = sys.argv[1]
 target_language = sys.argv[2]
-installation_path = sys.argv[3]
 
-text_1 = os.path.join(installation_path, f"wiki-1-{target_language}.md")
-text_2 = os.path.join(installation_path, f"wiki-2-{target_language}.md")
+text_1 = f"wiki-{target_language}-a.md"
+text_2 = f"wiki-{target_language}-b.md"
 
-# Read first file for the beginning
-def add_1(translation, text_1):
-    # Read content from the model text file
-    with open(text_1, 'r', encoding='utf-8') as src:
-        content = src.read()
-    # Append content to the destination file
-    with open(translation, 'a', encoding='utf-8') as dest:
-        dest.write('\n' + content)
-
-def add_2(translation, text_2):
-    # Read content from the model text file
-    with open(text_2, 'r', encoding='utf-8') as src:
-        content = src.read()
-    # Append content to the destination file
-    with open(translation, 'a', encoding='utf-8') as dest:
-        dest.write(content + '\n')
+def add_file_content(translation_file, source_file):  # More descriptive name
+    try:
+        with open(source_file, 'r', encoding='utf-8') as src:
+            content = src.read()
+        with open(translation_file, 'a', encoding='utf-8') as dest:
+            dest.write('\n' + content if os.path.getsize(translation_file) > 0 else content) # Add newline only if file is not empty
+    except FileNotFoundError:
+        print(f"File {source_file} does not exist. Skipping.")  # More general message
 
 # Do it
+add_file_content(translation_file, text_1)
+add_file_content(translation_file, text_2)
 
-if os.path.exists(text_1):
-    add_1(translation, text_1)
-else:
-    print(f"File {text_1} does not exist. Skipping model text at the beginig.")
-
-if os.path.exists(text_2):
-    add_2(translation, text_2)
-else:
-    print(f"File {text_2} does not exist. Skipping model text at the en.")
+#Could also be added the date of the begining of the translation

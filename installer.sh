@@ -40,24 +40,11 @@ EOF
 chmod +x "$DESKTOP_FILE"
 
 # Crete a pyhon virtual environement and install modules
+
 pip install venvs | zenity --progress --auto-close --percentage=40
 python3 -m venv $install_dir/venv | zenity --progress --auto-close --percentage=50
 source "$HOME/.claudators/venv/bin/activate" | zenity --progress --auto-close --percentage=65
 pip install requests datetime venvs | zenity --progress --auto-close --percentage=75
-
-# Set directories
-
-#zenity --question --title="Installation" --text="Where do you want to install Claudators?" --ok-label="Some other place" --cancel-label="/opt (recommended)"
-#if [ $? -eq 1 ]; then
-#  mkdir /opt/Claudators
-#  install_dir="/opt/Claudators"
-#else
-#  install_dir=$(zenity --file-selection --title="Claudators" --directory)
-#  if [ $? -ne 0 ]; then
-#    echo "Installation canceled."
-#    exit 1
-#  fi
-#fi
 
 # Ask the user for imput about directories and store it into a config file
 

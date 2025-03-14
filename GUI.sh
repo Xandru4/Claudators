@@ -27,9 +27,9 @@ fi
 output=$(zenity --forms \
        --text "Wikipedia article" \
        --add-entry "Article title"\
-       --add-entry "Original language" --entry-text="en"\
-       --add-entry "Target language" --entry-text="es"\
-       --add-entry "File extension" --entry-text="md")
+       --add-entry "Original language"\
+       --add-entry "Target language"\
+       --add-entry "File extension")
 # Check if the user canceled
 if [ $? -eq 1 ]; then
     zenity --warning --text="Operations canceled"
@@ -47,12 +47,12 @@ translation="$directory/WP:$title-$target_lan.$file_ext"
 
 # Execute fetching
 if [[ "$check_choices" == *"Fetch_Article"* ]]; then
-    python $install_dir/wiki-fetch.py "$original_lan" "$title" "$original" "$translation"
+    python wiki-fetch.py "$original_lan" "$title" "$original" "$translation"
 fi
 
 # Execute reference elimination
 if [[ "$check_choices" == *"Clean-URLs"* ]]; then
-    python $install_dir/wiki-refs.py "$translation"
+    python wiki-refs.py "$translation"
 fi
 
 # Execute translation
@@ -61,12 +61,12 @@ if [[ "$check_choices" == *"Translate"* ]]; then
     if [ -z "$target_lan" ]; then
         echo "No target language code entered. Exiting."
         exit 1
-    else python $install_dir/wiki-trans.py "$title" "$original_lan" "$target_lan" "$original" "$translation" "$file_ext"
+    else python wiki-trans.py "$title" "$original_lan" "$target_lan" "$original" "$translation" "$file_ext"
 fi
 
 # Execute model text addition script
 if [[ "$check_choices" == *"Model_Text"* ]]; then
-    python $install_dir/wiki-add.py "$original_lan" "$translation" "$directory" "$install_dir"
+    python wiki-add.py "$target_lan" "$translation"
 fi
 
 # Check if the Python script ran successfully

@@ -4,11 +4,15 @@ import requests
 # Set the imported terms
 original_lan = sys.argv[1]
 title = sys.argv[2]
-source = sys.argv[3]
+original = sys.argv[3]
 translation = sys.argv[4]
 
+if len(sys.argv) != 4:
+    print("Usage: python script.py <original_lan> <title> <original> <translation>")
+    sys.exit(1)
+
 # Define fetching
-def fetch_source(original_language, title):
+def fetch_source(original_lan, title):
     api_url = f"https://{original_lan}.wikipedia.org/w/api.php"
     params = {
         "action": "query",
@@ -32,15 +36,11 @@ def fetch_source(original_language, title):
         print(f"An error occurred: {e}")
         sys.exit(1)
 
-if len(sys.argv) != 5:
-    print("Usage: python script.py <original_lan> <title>")
-    sys.exit(1)
-
 # Fetch the source content
 wikitext = fetch_source(original_lan, title)
 if wikitext:
-    with open(source, "w", encoding="utf-8") as file:
+    with open(original, "w", encoding="utf-8") as file:
         file.write(wikitext)
     with open(translation, "w", encoding="utf-8") as file:
         file.write(wikitext)
-    print(f"Saved content to {source} and {translation}")
+    print(f"Saved content to {original} and {translation}")
