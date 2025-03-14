@@ -87,7 +87,7 @@ The tool empowers to edit online but internet is obviously needed to fetch and t
 	- [x] Ask for user imput during setup
 	- [x] Give it a good name and logo
 - [ ] Add a new functionality to suggest backlinks to the the original article that could be made for the translation
-- [ ] Make the whole app into an obsidian plugin? [YT](https://www.youtube.com/watch?v=kQCc7HYOfpY) or [YT](https://www.youtube.com/watch?v=AgXa03ZxJ88)
+- [ ] Make the whole app into an obsidian/QownNotes plugin? [YT](https://www.youtube.com/watch?v=kQCc7HYOfpY) or [YT](https://www.youtube.com/watch?v=AgXa03ZxJ88)
 
 [^1]:Obsidian or the gnome text editor is what I use, but you may simply use notepad or vim for a minimalist approach.
 [^2]:[Searching_for_Wikipedia_articles_using_Python](https://api.wikimedia.org/wiki/Searching_for_Wikipedia_articles_using_Python), [mediawiki.org/wiki/API](https://www.mediawiki.org/wiki/API:Main_page), [stackoverflow](https://stackoverflow.com/questions/627594/is-there-a-wikipedia-api/627606#627606).
