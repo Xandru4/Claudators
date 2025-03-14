@@ -86,6 +86,7 @@ The tool empowers to edit online but internet is obviously needed to fetch and t
 	- [x] Making a bash installer for the whole tool
 	- [x] Ask for user imput during setup
 	- [x] Give it a good name and logo
+- [ ] Add a new functionality to suggest backlinks to the the original article that could be made for the translation
 - [ ] Make the whole app into an obsidian plugin? [YT](https://www.youtube.com/watch?v=kQCc7HYOfpY) or [YT](https://www.youtube.com/watch?v=AgXa03ZxJ88)
 
 [^1]:Obsidian or the gnome text editor is what I use, but you may simply use notepad or vim for a minimalist approach.
