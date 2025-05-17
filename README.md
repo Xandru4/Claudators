@@ -84,9 +84,10 @@ The tool empowers to edit online but internet is obviously needed to fetch and t
 	- [x] Alternatively, the tool could work for local files so long articles can be handled manually?
 - [x] Learn to make a desktop icon for the app (bash script and for the python environement too I guess...)
 	- [x] Making a bash installer for the whole tool
-	- [x] Ask for user imput during setup
+	- [x] Ask for user input during setup
 	- [x] Give it a good name and logo
-- [ ] Add a new functionality to suggest backlinks to the the original article that could be made for the translation
+- [ ] Add a new functionality to suggest backlinks to the the original article that could be made on the translation
+- [ ] Use [markdown-wiki](https://github.com/Gozala/markdown-wiki) for the user to be able to translate in actual markdown
 - [ ] Make the whole app into an obsidian/QownNotes plugin? [YT](https://www.youtube.com/watch?v=kQCc7HYOfpY) or [YT](https://www.youtube.com/watch?v=AgXa03ZxJ88)
 
 [^1]:Obsidian or the gnome text editor is what I use, but you may simply use notepad or vim for a minimalist approach.
